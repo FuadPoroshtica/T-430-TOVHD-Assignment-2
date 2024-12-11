@@ -54,6 +54,12 @@ class SpotifyResultParser {
       if ($id) {
         $markup .= ' - <a href="' . $baseSpotifyUrl . '/' . $type . '/' . $id . '" target="_blank">View on Spotify</a>';
       }
+
+      // Display the Spotify URI.
+      if ($uri) {
+        $markup .= ' <small>[URI: ' . htmlspecialchars($uri, ENT_QUOTES) . ']</small>';
+      }
+
       $markup .= '</li>';
 
       // Add to results.
@@ -63,5 +69,3 @@ class SpotifyResultParser {
     return $formattedResults;
   }
 }
-
-
